@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport"/>
+    <title>Luis Tinco Premium | Maison de Design & Haute Décoration · Chacarilla</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+    
+    <!-- Tipografías Editoriales de Lujo: Cormorant Garamond + Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "maison-black": "#080809",
+                        "maison-charcoal": "#101012",
+                        "maison-stone": "#18181B",
+                        "maison-border": "#27272A",
+                        "maison-gold": "#C8A27A",
+                        "maison-gold-muted": "#9A7B56",
+                        "maison-cream": "#F4EFEA",
+                        "maison-muted": "#8E8D94"
+                    },
+                    fontFamily: {
+                        "editorial": ["'Cormorant Garamond'", "serif"],
+                        "sans": ["'Montserrat'", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html, body {
+            background-color: #080809;
+            color: #F4EFEA;
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .border-fine {
+            border-color: rgba(244, 239, 234, 0.08);
+        }
+
+        .img-editorial {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 0.75rem;
+            background: radial-gradient(circle at center, #18181B 0%, #101012 100%);
+            border: 1px solid rgba(200, 162, 122, 0.2);
+            color: #C8A27A;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-weight: 500;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-luxury {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+        .btn-luxury::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(200, 162, 122, 0.2), transparent);
+            transition: left 0.75s ease;
+        }
+        .btn-luxury:hover::after {
+            left: 100%;
+        }
+    </style>
+</head>
+<body class="selection:bg-maison-gold selection:text-maison-black">
+
+<!-- ================= 1. NAVEGACIÓN SUSPENDIDA ================= -->
+    <header class="fixed top-0 inset-x-0 z-50 bg-maison-black/75 backdrop-blur-md border-b border-fine transition-all">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16 h-24 flex items-center justify-between">
+            
+            <div class="flex items-center gap-12">
+                <!-- Logotipo & Nombre (Alineado a la Izquierda) -->
+                <a href="#inicio" class="flex items-center gap-3.5 group">
+                    <!-- Contenedor para tu logo: ajusta la ruta en el src -->
+                    <div class="h-10 w-auto flex items-center justify-center shrink-0">
+                        <img src="img/logo.jpg" 
+                             alt="Logo Luis Tinco Premium" 
+                             class="h-9 w-auto object-contain hidden"
+                             onload="this.classList.remove('hidden'); this.nextElementSibling?.classList.add('hidden');" />
+                        
+                        <!-- Placeholder temporal en caso de que aún no cargue la imagen -->
+                        <div class="w-10 h-10 border border-maison-gold/40 flex items-center justify-center text-maison-gold text-[10px] tracking-widest uppercase">
+                            Logo
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <span class="font-editorial text-lg tracking-[0.2em] font-normal uppercase text-maison-cream leading-tight">Luis Tinco</span>
+                        <span class="text-[8px] tracking-[0.35em] uppercase text-maison-gold">Premium</span>
+                    </div>
+                </a>
+
+                <!-- Navegación Desktop -->
+                <nav class="hidden lg:flex items-center gap-8 text-[11px] uppercase tracking-[0.25em] text-maison-muted">
+                    <a href="#manifiesto" class="hover:text-maison-cream transition-colors">La Maison</a>
+                    <a href="#curaduria" class="hover:text-maison-cream transition-colors">Curaduría</a>
+                    <a href="#artesania" class="hover:text-maison-cream transition-colors">El Detalle</a>
+                    <a href="#showroom" class="hover:text-maison-cream transition-colors">Showroom</a>
+                </nav>
+            </div>
+
+            <!-- Acceso & Mobile Menu -->
+            <div class="flex items-center gap-4">
+                <a href="https://wa.me/51953508116?text=Deseo%20coordinar%20una%20visita%20privada%20al%20showroom%20de%20Chacarilla" 
+                   target="_blank" 
+                   class="btn-luxury hidden sm:inline-flex px-6 py-3 border border-maison-gold/40 hover:border-maison-gold text-maison-gold text-[10px] uppercase tracking-[0.25em] font-medium transition-colors">
+                    Agendar Cita
+                </a>
+
+                <!-- Botón Menú Móvil -->
+                <button id="mobile-toggle" class="lg:hidden w-10 h-10 border border-fine text-maison-cream flex items-center justify-center hover:border-maison-gold transition-colors" aria-label="Menú">
+                    <i class="fa-solid fa-bars text-sm"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-popup" class="hidden lg:hidden bg-maison-black border-b border-fine px-6 py-5 space-y-4 text-[11px] font-medium uppercase tracking-[0.25em] text-maison-muted">
+            <a href="#manifiesto" class="block py-1 hover:text-maison-cream">La Maison</a>
+            <a href="#curaduria" class="block py-1 hover:text-maison-cream">Curaduría</a>
+            <a href="#artesania" class="block py-1 hover:text-maison-cream">El Detalle</a>
+            <a href="#showroom" class="block py-1 hover:text-maison-cream">Showroom Chacarilla</a>
+            <a href="https://wa.me/51953508116" target="_blank" class="block text-center py-3 border border-maison-gold/40 text-maison-gold mt-3">Agendar Cita</a>
+        </div>
+    </header>
+
+    <!-- ================= 2. HERO PANORÁMICO (FULL-BLEED CINEMATIC) ================= -->
+    <section class="relative h-screen min-h-[700px] w-full flex items-end pb-20 px-6 lg:px-16 overflow-hidden">
+        <!-- Fondo Teatral / Imagen de Gran Formato -->
+        <div class="absolute inset-0 z-0">
+            <img src="img/hero.png" 
+                 alt="Showroom Luis Tinco Chacarilla" 
+                 class="w-full h-full object-cover hidden"
+                 onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" />
+            <div class="img-editorial h-full w-full">
+                <i class="fa-solid fa-panorama text-4xl mb-2 opacity-50"></i>
+                <span>Imagen Panorámica del Showroom</span>
+            </div>
+            <div class="absolute inset-0 bg-gradient-to-t from-maison-black via-maison-black/50 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto text-center space-y-6" data-aos="fade-up">
+            <div class="inline-flex items-center gap-3">
+                <span class="h-px w-8 bg-maison-gold"></span>
+                <span class="text-[10px] uppercase tracking-[0.35em] text-maison-gold font-medium">18 Años de Maestría Interior &bull; Lima</span>
+                <span class="h-px w-8 bg-maison-gold"></span>
+            </div>
+
+            <h1 class="font-editorial text-4xl sm:text-6xl lg:text-7xl font-light tracking-wide text-maison-cream leading-[1.1]">
+                Diseño que transforma, <br/>
+                <span class="italic font-normal text-maison-gold">calidad que perdura.</span>
+            </h1>
+
+            <p class="text-xs sm:text-sm text-maison-cream/80 max-w-xl mx-auto font-light leading-relaxed tracking-wider">
+                Piezas de autor concebidas para coexistir en armonía escénica. Acero inoxidable cromado, mármol seleccionado y tapicería capitoné de estándar internacional.
+            </p>
+
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-5">
+                <a href="#curaduria" class="px-8 py-4 bg-maison-cream text-maison-black text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-maison-gold transition-colors">
+                    Explorar Curaduría
+                </a>
+                <a href="#showroom" class="px-8 py-4 border border-white/20 text-maison-cream text-[11px] uppercase tracking-[0.25em] hover:border-maison-gold transition-colors">
+                    Visitar Showroom
+                </a>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-maison-muted text-xs tracking-widest uppercase flex flex-col items-center gap-2">
+            <span class="text-[9px]">Scroll</span>
+            <span class="w-px h-6 bg-maison-gold/40"></span>
+        </div>
+    </section>
+
+    <!-- ================= 3. EL MANIFIESTO (NADA SUELTO, NADA IMPROVISADO) ================= -->
+    <section class="py-32 px-6 lg:px-16 border-b border-fine bg-maison-charcoal" id="manifiesto">
+        <div class="max-w-4xl mx-auto text-center space-y-8" data-aos="fade-up">
+            <span class="text-[10px] uppercase tracking-[0.4em] text-maison-gold block font-medium">El Manifiesto</span>
+            
+            <h2 class="font-editorial text-3xl sm:text-5xl font-light text-maison-cream leading-tight">
+                "Diseñamos ambientes completos. <br/>
+                <span class="italic text-maison-gold font-normal">Nada suelto, nada improvisado."</span>
+            </h2>
+
+            <p class="text-xs sm:text-sm text-maison-muted leading-relaxed font-light tracking-wide max-w-2xl mx-auto">
+                Diseñamos, fabricamos y montamos. Todo emerge de un único trazo proyectual: las proporciones del espacio, la temperatura lumínica, los reflejos del acero y la calidez del cuero. El resultado se percibe integrado desde el primer instante, no como una yuxtaposición de adquisiciones aisladas.
+            </p>
+
+            <div class="pt-6 grid grid-cols-2 md:grid-cols-4 gap-8 border-t border-fine text-left">
+                <div class="space-y-1">
+                    <span class="font-editorial text-2xl text-maison-cream block">18</span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-maison-muted">Años de Creación</span>
+                </div>
+                <div class="space-y-1">
+                    <span class="font-editorial text-2xl text-maison-cream block">Chacarilla</span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-maison-muted">Showroom Insignia</span>
+                </div>
+                <div class="space-y-1">
+                    <span class="font-editorial text-2xl text-maison-cream block">Inox 304</span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-maison-muted">Acero Pulido a Espejo</span>
+                </div>
+                <div class="space-y-1">
+                    <span class="font-editorial text-2xl text-maison-cream block">Llave en Mano</span>
+                    <span class="text-[10px] uppercase tracking-[0.2em] text-maison-muted">Arquitectura Integral</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= 4. CURADURÍA DE AMBIENTES (PUESTAS EN ESCENA) ================= -->
+    <section class="py-32 px-6 lg:px-16 max-w-[1600px] mx-auto space-y-36" id="curaduria">
+        
+        <!-- Puesta en Escena 1: The Grand Living Room -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            <div class="lg:col-span-8 order-2 lg:order-1" data-aos="fade-right">
+                <div class="aspect-[16/10] w-full overflow-hidden relative border border-fine">
+                    <img src="img/1.jpg" 
+                         alt="Sala Monumental Luis Tinco" 
+                         class="w-full h-full object-cover hidden"
+                         onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" />
+                    <div class="img-editorial">
+                        <i class="fa-solid fa-couch text-3xl mb-1 opacity-50"></i>
+                        <span>Imagen: La Gran Sala con Muro de Piedra</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4 order-1 lg:order-2 space-y-6" data-aos="fade-left">
+                <span class="text-[10px] uppercase tracking-[0.3em] text-maison-gold font-medium block">Puesta en Escena 01</span>
+                <h3 class="font-editorial text-3xl sm:text-4xl text-maison-cream font-light">The Monumental Lounge</h3>
+                <p class="text-xs sm:text-sm text-maison-muted leading-relaxed font-light">
+                    Juegos seccionales tapizados en chenille perlado en diálogo con poltronas estructurales de acero cromado pulido. El telón de fondo integra placas de piedra rústica en relieve bañadas con iluminación rasante desde cornisas ocultas.
+                </p>
+                <div class="pt-4 border-t border-fine flex items-center justify-between text-[11px] uppercase tracking-[0.2em]">
+                    <span class="text-maison-muted">Disponibilidad en Showroom</span>
+                    <a href="https://wa.me/51953508116?text=Deseo%20información%20sobre%20The%20Monumental%20Lounge" target="_blank" class="text-maison-gold hover:text-maison-cream transition-colors">
+                        Consultar &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Puesta en Escena 2: The Chesterfield & Media Wall -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            <div class="lg:col-span-4 space-y-6" data-aos="fade-right">
+                <span class="text-[10px] uppercase tracking-[0.3em] text-maison-gold font-medium block">Puesta en Escena 02</span>
+                <h3 class="font-editorial text-3xl sm:text-4xl text-maison-cream font-light">Capitoné & Nero Marquina</h3>
+                <p class="text-xs sm:text-sm text-maison-muted leading-relaxed font-light">
+                    Reinvención del diseño Chesterfield clásico con aristas de acero inoxidable brillante y remates en maderas nobles. El conjunto se proyecta junto a un media wall en mármol negro Marquina con chimenea bioetanol embutida y celosías alistonadas.
+                </p>
+                <div class="pt-4 border-t border-fine flex items-center justify-between text-[11px] uppercase tracking-[0.2em]">
+                    <span class="text-maison-muted">Fabricación a Medida</span>
+                    <a href="https://wa.me/51953508116?text=Deseo%20información%20sobre%20el%20conjunto%20Capitone%20y%20Media%20Wall" target="_blank" class="text-maison-gold hover:text-maison-cream transition-colors">
+                        Consultar &rarr;
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-8" data-aos="fade-left">
+                <div class="aspect-[16/10] w-full overflow-hidden relative border border-fine">
+                    <img src="img/2.jpg" 
+                         alt="Capitoné y Media Wall" 
+                         class="w-full h-full object-cover hidden"
+                         onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" />
+                    <div class="img-editorial">
+                        <i class="fa-solid fa-fire text-3xl mb-1 opacity-50"></i>
+                        <span>Imagen: Capitoné con Acero & Chimenea</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Puesta en Escena 3: The Gala Dining -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            <div class="lg:col-span-8 order-2 lg:order-1" data-aos="fade-right">
+                <div class="aspect-[16/10] w-full overflow-hidden relative border border-fine">
+                    <img src="img/3.jpg" 
+                         alt="Comedor de Gala Luis Tinco" 
+                         class="w-full h-full object-cover hidden"
+                         onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" />
+                    <div class="img-editorial">
+                        <i class="fa-solid fa-gem text-3xl mb-1 opacity-50"></i>
+                        <span>Imagen: Comedor Escultural & Vidrio Ahumado</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-4 order-1 lg:order-2 space-y-6" data-aos="fade-left">
+                <span class="text-[10px] uppercase tracking-[0.3em] text-maison-gold font-medium block">Puesta en Escena 03</span>
+                <h3 class="font-editorial text-3xl sm:text-4xl text-maison-cream font-light">The Dining Pavilion</h3>
+                <p class="text-xs sm:text-sm text-maison-muted leading-relaxed font-light">
+                    Mesa de comedor concebida como escultura central: base geométrica en acero macizo cromado, superficie en cristal ahumado templado y sillas de tapicería envolvente capitonada en dorado.
+                </p>
+                <div class="pt-4 border-t border-fine flex items-center justify-between text-[11px] uppercase tracking-[0.2em]">
+                    <span class="text-maison-muted">Edición Limitada</span>
+                    <a href="https://wa.me/51953508116?text=Deseo%20información%20sobre%20The%20Dining%20Pavilion" target="_blank" class="text-maison-gold hover:text-maison-cream transition-colors">
+                        Consultar &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+<!-- ================= 5. EL DETALLE DE AUTOR (MACRO GALLERY) ================= -->
+    <section class="py-24 bg-maison-charcoal border-y border-fine" id="artesania">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16">
+            
+            <div class="max-w-xl mb-16 space-y-3" data-aos="fade-up">
+                <span class="text-[10px] uppercase tracking-[0.3em] text-maison-gold font-medium block">Orfebrería del Mueble</span>
+                <h2 class="font-editorial text-3xl sm:text-4xl text-maison-cream font-light">Anatomía de una Pieza Tinco</h2>
+                <p class="text-xs text-maison-muted leading-relaxed tracking-wider">
+                    Cada componente refleja la precisión de la mano artesana en simbiosis con el acero y la materia prima seleccionada.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="space-y-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="aspect-[4/3] w-full relative overflow-hidden border border-fine bg-maison-black">
+                        <img src="" 
+                             alt="Placa Metálica con Monograma" 
+                             class="w-full h-full object-cover hidden" 
+                             onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" />
+                        <div class="img-editorial">
+                            <span class="tracking-widest">Imagen</span>
+                        </div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-[0.25em] text-maison-gold block">El Sello de Casa</span>
+                    <h4 class="font-editorial text-xl text-maison-cream">Placas Troqueladas en Acero</h4>
+                    <p class="text-xs text-maison-muted font-light leading-relaxed">
+                        Incrustación metálica grabada con el isotipo de la firma sobre las butacas y respaldos, certificando autenticidad y procedencia de taller.
+                    </p>
+                </div>
+
+                <div class="space-y-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="aspect-[4/3] w-full relative overflow-hidden border border-fine bg-maison-black">
+                        <img src="" 
+                             alt="Capitoné Artesanal en Cuero" 
+                             class="w-full h-full object-cover hidden" 
+                             onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" />
+                        <div class="img-editorial">
+                            <span class="tracking-widest">Imagen</span>
+                        </div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-[0.25em] text-maison-gold block">Tapicería Fina</span>
+                    <h4 class="font-editorial text-xl text-maison-cream">Punteado y Pliegues Manuales</h4>
+                    <p class="text-xs text-maison-muted font-light leading-relaxed">
+                        Técnica tradicional de anclaje profundo que asegura la tensión del textil a lo largo de décadas sin deformaciones en el asiento.
+                    </p>
+                </div>
+
+                <div class="space-y-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="aspect-[4/3] w-full relative overflow-hidden border border-fine bg-maison-black">
+                        <img src="" 
+                             alt="Acero Pulido & Esquinas Ensamble" 
+                             class="w-full h-full object-cover hidden" 
+                             onload="this.classList.remove('hidden'); this.nextElementSibling.classList.add('hidden');" />
+                        <div class="img-editorial">
+                            <span class="tracking-widest">Imagen</span>
+                        </div>
+                    </div>
+                    <span class="text-[10px] uppercase tracking-[0.25em] text-maison-gold block">Metalistería de Alta Gama</span>
+                    <h4 class="font-editorial text-xl text-maison-cream">Soldaduras Invisibles</h4>
+                    <p class="text-xs text-maison-muted font-light leading-relaxed">
+                        Estructuras tubulares rectificadas sin cordones visibles, con acabado de espejo cromado resistente a la salinidad de Lima.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= 6. LA EXPERIENCIA DEL SHOWROOM ================= -->
+    <section class="py-32 px-6 lg:px-16 max-w-5xl mx-auto" id="showroom">
+        <div class="border border-fine p-8 sm:p-16 bg-maison-charcoal text-center space-y-8" data-aos="fade-up">
+            
+            <div class="w-12 h-12 mx-auto text-maison-gold">
+                <svg viewBox="0 0 120 70" class="w-full h-full fill-none stroke-current stroke-[6]">
+                    <rect x="10" y="10" width="45" height="50"/>
+                    <line x1="10" y1="35" x2="55" y2="35"/>
+                    <rect x="65" y="10" width="45" height="50"/>
+                    <line x1="65" y1="35" x2="110" y2="35"/>
+                    <line x1="55" y1="22" x2="65" y2="22"/>
+                    <line x1="55" y1="48" x2="65" y2="48"/>
+                </svg>
+            </div>
+
+            <span class="text-[10px] uppercase tracking-[0.35em] text-maison-gold font-medium block">Showroom Chacarilla</span>
+            
+            <h2 class="font-editorial text-3xl sm:text-5xl text-maison-cream font-light">
+                Viva la atmósfera en persona
+            </h2>
+
+            <p class="text-xs sm:text-sm text-maison-muted max-w-lg mx-auto font-light leading-relaxed">
+                Le invitamos a recorrer nuestras puestas en escena en Av. Primavera 629, Chacarilla. Compruebe la firmeza del capitoné, la pureza del mármol y reciba asesoría directa de nuestro equipo de interiorismo.
+            </p>
+
+            <div class="pt-4 flex flex-col sm:flex-row items-center justify-center gap-6 text-xs text-maison-cream/80">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-location-dot text-maison-gold"></i>
+                    <span>Av. Primavera 629, Chacarilla &bull; San Borja</span>
+                </div>
+                <span class="hidden sm:inline text-maison-border">&bull;</span>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-industry text-maison-gold"></i>
+                    <span>Planta Matriz: Parque Industrial, V.E.S.</span>
+                </div>
+            </div>
+
+            <div class="pt-4">
+                <a href="https://wa.me/51953508116?text=Hola%20Luis%20Tinco%20Premium,%20deseo%20agendar%20una%20visita%20asistida%20al%20showroom" target="_blank" class="btn-luxury inline-block px-10 py-4 bg-maison-gold text-maison-black text-[11px] uppercase tracking-[0.25em] font-medium hover:bg-maison-cream transition-colors">
+                    Agendar Cita en Showroom
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= 7. FOOTER ================= -->
+    <footer class="py-16 bg-maison-black border-t border-fine text-[11px] text-maison-muted">
+        <div class="max-w-[1600px] mx-auto px-6 lg:px-16 flex flex-col md:flex-row items-center justify-between gap-8">
+            
+            <div class="flex items-center gap-4">
+                <!-- Contenedor para el logo en Footer -->
+                <div class="h-8 w-auto flex items-center justify-center shrink-0">
+                    <img src="img/logo.jpg" 
+                         alt="Logo Luis Tinco Footer" 
+                         class="h-7 w-auto object-contain hidden" 
+                         onload="this.classList.remove('hidden'); this.nextElementSibling?.classList.add('hidden');" />
+                    
+                    <div class="w-8 h-8 border border-maison-gold/40 flex items-center justify-center text-maison-gold text-[9px] tracking-widest uppercase">
+                        Logo
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4">
+                    <span class="font-editorial text-base uppercase tracking-[0.2em] text-maison-cream leading-tight">Luis Tinco</span>
+                    <span class="hidden sm:inline text-maison-gold">&bull;</span>
+                    <span class="tracking-widest uppercase text-[10px]">Maison de Design &bull; Chacarilla</span>
+                </div>
+            </div>
+
+            <div class="flex items-center gap-6 text-sm text-maison-cream">
+                <a href="https://instagram.com/mueblesluistinco" target="_blank" class="hover:text-maison-gold transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://facebook.com/LuisTincoPremium" target="_blank" class="hover:text-maison-gold transition-colors"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://wa.me/51953508116" target="_blank" class="hover:text-maison-gold transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+
+            <span class="tracking-[0.2em] uppercase text-[10px] text-neutral-600">
+                &copy; 2026 Luis Tinco Premium. Lima, Perú.
+            </span>
+
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            AOS.init({
+                duration: 800,
+                once: true,
+                easing: 'ease-out-cubic',
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggle = document.getElementById('mobile-toggle');
+            const popup = document.getElementById('mobile-popup');
+            if (toggle && popup) {
+                toggle.addEventListener('click', () => popup.classList.toggle('hidden'));
+                popup.querySelectorAll('a').forEach(a => a.addEventListener('click', () => popup.classList.add('hidden')));
+            }
+        });
+    </script>
+
+</body>
+</html>
