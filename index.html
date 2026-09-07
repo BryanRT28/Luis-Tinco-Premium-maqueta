@@ -402,15 +402,16 @@
     <section class="py-32 px-6 lg:px-16 max-w-5xl mx-auto" id="showroom">
         <div class="border border-fine p-8 sm:p-16 bg-maison-charcoal text-center space-y-8" data-aos="fade-up">
             
-            <div class="w-12 h-12 mx-auto text-maison-gold">
-                <svg viewBox="0 0 120 70" class="w-full h-full fill-none stroke-current stroke-[6]">
-                    <rect x="10" y="10" width="45" height="50"/>
-                    <line x1="10" y1="35" x2="55" y2="35"/>
-                    <rect x="65" y="10" width="45" height="50"/>
-                    <line x1="65" y1="35" x2="110" y2="35"/>
-                    <line x1="55" y1="22" x2="65" y2="22"/>
-                    <line x1="55" y1="48" x2="65" y2="48"/>
-                </svg>
+            <!-- Contenedor para el Logo -->
+            <div class="h-32 w-auto flex items-center justify-center mx-auto">
+                <img src="img/logo2.jpg" 
+                     alt="Logo Luis Tinco Showroom" 
+                     class="h-32 w-auto object-contain hidden" 
+                     onload="this.classList.remove('hidden'); this.nextElementSibling?.classList.add('hidden');" />
+                
+                <div class="w-12 h-12 border border-maison-gold/40 flex items-center justify-center text-maison-gold text-[10px] tracking-widest uppercase">
+                    Logo
+                </div>
             </div>
 
             <span class="text-[10px] uppercase tracking-[0.35em] text-maison-gold font-medium block">Showroom Chacarilla</span>
